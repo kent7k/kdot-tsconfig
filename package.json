@@ -1,5 +1,5 @@
 {
-  "name": "@kdot/tsconfig",
+  "name": "@kent7k/tsconfig",
   "version": "0.1.0",
   "files": ["*.json", "src/**/*.json"],
   "exports": {
@@ -11,7 +11,7 @@
     "./figma.json": "./figma.json"
   },
   "publishConfig": {
-    "access": "public"
+    "registry": "https://npm.pkg.github.com"
   },
   "$comment1": "app.json（Next.js/Bundler)",
   "$comment2": "pkg.json（現状 DOM を含む）",
