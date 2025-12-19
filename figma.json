@@ -1,0 +1,10 @@
+{
+  "extends": "./node-esm.json",
+  "compilerOptions": {
+    "lib": ["ES2022"],                    // DOM を入れない（@figma/plugin-typings と二重定義を防ぐ）
+    "types": ["@figma/plugin-typings"],   // Figma のグローバルを提供
+    "module": "esnext",
+    "moduleResolution": "bundler",        // バンドラ前提ならこちらが楽。tsc-only なら "nodenext" でもOK
+    "noEmit": false
+  }
+}

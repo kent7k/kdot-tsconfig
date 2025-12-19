@@ -1,0 +1,16 @@
+{
+  "extends": "./node-base.json",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "noEmit": true
+  }
+}
+
+  // -----------------------------
+  // なぜ node-base.json を継承？
+  // Node 専用（lib: ["ES2022"], types: ["node"]）＋ esModuleInterop 等の基底はすでに base.json→pkg-node.json に揃っているため、script 用は差分だけで済ませられます。
+  // module: "NodeNext" は noEmit でも型解決に影響します（相対 import の拡張子チェック等）。preserve でも動きますが、Node 実行に寄せるなら NodeNext 推奨。
+
+  // -----------------------------
+  // これで .dotfiles/typescripts/scripts/**/*.ts を tsx --tsconfig typescripts/tsconfig.scripts.json scripts/foo.ts のように実行できます。
+  //（tsx は --tsconfig / --project フラグで明示指定するのが確実）
