@@ -1,6 +1,6 @@
 {
   "name": "@kent7k/tsconfig",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "files": ["*.json", "src/**/*.json"],
   "exports": {
     "./node-esm.json": "./node-esm.json",
