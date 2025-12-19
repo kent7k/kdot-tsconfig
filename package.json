@@ -1,7 +1,6 @@
 {
   "name": "@kdot/tsconfig",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "files": ["*.json", "src/**/*.json"],
   "exports": {
     "./node-esm.json": "./node-esm.json",
@@ -10,6 +9,9 @@
     "./scripts.json": "./scripts.json",
     "./app.json": "./app.json",
     "./figma.json": "./figma.json"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "$comment1": "app.json（Next.js/Bundler)",
   "$comment2": "pkg.json（現状 DOM を含む）",
