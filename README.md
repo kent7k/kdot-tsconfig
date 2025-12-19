@@ -1,0 +1,1 @@
+# kdot-tsconfig
