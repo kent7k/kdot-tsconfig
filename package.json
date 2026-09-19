@@ -1,18 +1,24 @@
 {
   "name": "@kent7k/tsconfig",
-  "version": "0.2.0",
-  "description": "Shared TypeScript base configs (Node 22+/24 / TS 5.9+)",
+  "version": "0.3.0",
+  "description": "Shared TypeScript base configs (Node 22 / TS 5.9+, TS 6.0-ready)",
   "files": ["*.json", "src/**/*.json"],
   "exports": {
     "./base.json": "./base.json",
     "./node-base.json": "./node-base.json",
     "./node-esm.json": "./node-esm.json",
-    "./node-cjs.json": "./node-cjs.json",
     "./scripts.json": "./scripts.json",
     "./web-base.json": "./web-base.json",
+    "./react.json": "./react.json",
     "./web.json": "./web.json",
     "./app.json": "./app.json",
     "./figma.json": "./figma.json"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.9"
+  },
+  "peerDependenciesMeta": {
+    "typescript": { "optional": true }
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

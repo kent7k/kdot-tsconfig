@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./node-base.json",
+  "extends": "./web-base.json",
   "compilerOptions": {
-    "erasableSyntaxOnly": true
+    "jsx": "react-jsx"
   }
 }
