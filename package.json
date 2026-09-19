@@ -1,19 +1,24 @@
 {
   "name": "@kent7k/tsconfig",
   "version": "0.2.0",
+  "description": "Shared TypeScript base configs (Node 22+/24 / TS 5.9+)",
   "files": ["*.json", "src/**/*.json"],
   "exports": {
+    "./base.json": "./base.json",
+    "./node-base.json": "./node-base.json",
     "./node-esm.json": "./node-esm.json",
     "./node-cjs.json": "./node-cjs.json",
-    "./web.json": "./web.json",
     "./scripts.json": "./scripts.json",
+    "./web-base.json": "./web-base.json",
+    "./web.json": "./web.json",
     "./app.json": "./app.json",
     "./figma.json": "./figma.json"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "$comment1": "app.json（Next.js/Bundler)",
-  "$comment2": "pkg.json（現状 DOM を含む）",
-  "$comment3": "pkg-node.json（Node/Esm/Project refs 前提）"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kent7k/kdot-tsconfig.git"
+  }
 }
