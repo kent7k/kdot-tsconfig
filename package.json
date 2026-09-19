@@ -2,7 +2,11 @@
   "name": "@kent7k/tsconfig",
   "version": "0.3.0",
   "description": "Shared TypeScript base configs (Node 22 / TS 5.9+, TS 6.0-ready)",
-  "files": ["*.json", "src/**/*.json"],
+  "files": [
+    "*.json",
+    "src/**/*.json",
+    "README.md"
+  ],
   "exports": {
     "./base.json": "./base.json",
     "./node-base.json": "./node-base.json",
@@ -18,7 +22,9 @@
     "typescript": ">=5.9"
   },
   "peerDependenciesMeta": {
-    "typescript": { "optional": true }
+    "typescript": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
