@@ -1,0 +1,32 @@
+name: publish
+
+# npmjs へ trusted publishing（OIDC）で出す。token は持たない。
+# 前提: npmjs の @kent7k/tsconfig の Settings → Trusted publisher に
+#   repository = kent7k/kdot-tsconfig・workflow = publish.yml を登録済（初回 publish だけ手元から token で出した）。
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          # trusted publishing は Node >= 22.14・npm >= 11.5.1。Node 24 は npm 11 を同梱する。
+          node-version: 24
+      - run: npm --version
+      - name: publish（同じ版が npmjs にあれば飛ばす）
+        run: |
+          spec="$(node -p 'const p=require("./package.json"); p.name+"@"+p.version')"
+          if npm view "$spec" version >/dev/null 2>&1; then
+            echo "skip $spec (already published)"
+          else
+            npm publish --access public
+          fi
