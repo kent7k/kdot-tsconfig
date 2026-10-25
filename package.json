@@ -1,6 +1,6 @@
 {
   "name": "@kent7k/tsconfig",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared TypeScript base configs (Node 22 / TS 5.9+, TS 6.0-ready)",
   "license": "MIT",
   "files": [
