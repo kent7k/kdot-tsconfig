@@ -1,11 +1,13 @@
 {
   "name": "@kent7k/tsconfig",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Shared TypeScript base configs (Node 22 / TS 5.9+, TS 6.0-ready)",
+  "license": "MIT",
   "files": [
     "*.json",
     "src/**/*.json",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "exports": {
     "./base.json": "./base.json",
@@ -27,7 +29,8 @@
     }
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",

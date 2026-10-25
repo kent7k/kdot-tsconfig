@@ -54,3 +54,14 @@ TypeScript 共通 tsconfig。**Node 22 / TS 5.9+ 前提**、TS 6.0 の既定値�
 7.0 (Go ネイティブ) は `tsc` は速いが **programmatic API がない**。
 typescript-eslint / ts-morph / Next.js の型プラグイン / typed-scss-modules が動かないため、
 **API が入る 7.1 まで上げない**。このリポジトリは 7.0 で削除される option を既に使っていない。
+
+## 取得と publish
+
+npmjs の public パッケージ（2026-10 に GitHub Packages の private から移した）。consumer の `.npmrc` に routing も auth も要らない。
+
+```bash
+pnpm add -D @kent7k/tsconfig
+```
+
+publish はタグ `v*` の push で `.github/workflows/publish.yml` が出す（npmjs の trusted publishing＝OIDC。token は持たない・同じ版は飛ばす）。
+`npm login` は使わない（`~/.npmrc` は dotfiles への symlink で、token のリテラルが git に入る）。
